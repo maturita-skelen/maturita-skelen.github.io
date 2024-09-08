@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Strojírenská Technologie</title>
+    <title>SKELEN - Strojírenská Technologie</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="Strojírenská technologie, maturita" name="keywords">
+    <meta content="Web pro přípravu na Maturitní zkoušku - Strojírenská technologie" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -22,9 +22,9 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
     <a href="index.html" class="navbar-brand ml-lg-3">
         <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
     </a>
@@ -39,7 +39,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
                 <div class="dropdown-menu" aria-labelledby="subjectDropdown">
-                    <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
+                    <a class="dropdown-item active" href="strojirenska-technologie.html">Strojírenská Technologie</a>
                     <a class="dropdown-item" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
                     <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
                 </div>
@@ -49,28 +49,232 @@
 </nav>
 <!-- Navbar End -->
 
-<!-- Main Section Start -->
-<div class="container-fluid pt-5" id="subjects">
+<!-- Header Start -->
+<div class="container-fluid bg-white d-flex align-items-center mb-5 py-5" style="min-height: 50vh;">
     <div class="container">
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">PŘEDMĚTY</h1>
-            <h1 class="position-absolute text-uppercase text-primary">STT</h1>
+            <h1 class="position-absolute text-uppercase text-primary">Strojírenská Technologie</h1>
         </div>
     </div>
 </div>
-<!-- Main Section End -->
+<!-- Header End -->
 
-<!-- Content Section Start -->
-<div class="container mt-4">
-    <p>Detailní informace o předmětu Strojírenská Technologie...</p>
+<!-- Otázky Strojírenská Technologie Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center mb-4">
+            <h1 class="display-4 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Seznam Otázek</h1>
+            <h1 class="position-absolute text-uppercase text-primary">Seznam otázek</h1>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Otázka</th>
+                        <th>Stav</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <a href="detail-otazka-1.html" class="text-light-blue">Konstrukční oceli a slévárenské kovy</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o konstrukčních ocelích a slévárenských kovech, jejich vlastnostech a použití." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <a href="detail-otazka-2.html" class="text-light-blue">Nástrojové materiály</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o nástrojových materiálech, jejich vlastnostech a aplikacích." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <a href="detail-otazka-3.html" class="text-light-blue">Rovnovážné diagramy a metalografie</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o rovnovážných diagramech a metalografických metodách." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <a href="detail-otazka-4.html" class="text-light-blue">Opěrné, ustavovací a vodící prvky přípravků</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o opěrných, ustavovacích a vodících prvcích přípravků." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <a href="detail-otazka-5.html" class="text-light-blue">Konstrukce přípravků</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o konstrukci přípravků a jejich funkcích." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <a href="detail-otazka-6.html" class="text-light-blue">Prášková metalurgie</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o práškové metalurgii a jejích technologiích." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="detail-otazka-7.html" class="text-light-blue">Výroba závitů</a></td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <a href="detail-otazka-8.html" class="text-light-blue">Základy obrábění</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o základech obrábění a jeho metodách." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <a href="detail-otazka-9.html" class="text-light-blue">Soustružení tvarových ploch</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o soustružení tvarových ploch a jeho technikách." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <a href="detail-otazka-10.html" class="text-light-blue">Výroba polotovarů svařováním</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o výrobě polotovarů svařováním a jeho metodách." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            <a href="detail-otazka-11.html" class="text-light-blue">Výroba polotovarů litím</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o výrobě polotovarů litím a jeho procesech." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>
+                            <a href="detail-otazka-12.html" class="text-light-blue">Výroba polotovarů z plastů</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o výrobě polotovarů z plastů a jejich vlastnostech." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>
+                            <a href="detail-otazka-13.html" class="text-light-blue">Vrtání a vyvrtávání, zahlubování, vyhrubování a vystružování</a>
+                        </td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>
+                            <a href="detail-otazka-14.html" class="text-light-blue">Tepelné a chemicko-tepelné zpracování oceli</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o tepelném a chemicko-tepelném zpracování oceli." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>
+                            <a href="detail-otazka-15.html" class="text-light-blue">Konstrukce a výpočet střižného nástroje</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o konstrukci a výpočtu střižného nástroje." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>
+                            <a href="detail-otazka-16.html" class="text-light-blue">Lisovací nástroje</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o lisovacích nástrojích a jejich konstrukci." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>
+                            <a href="detail-otazka-17.html" class="text-light-blue">Výroba polotovarů tvářením za tepla</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o výrobě polotovarů tvářením za tepla." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-naucit font-weight-bold text-danger">NAUČIT</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><a href="detail-otazka-18.html" class="text-light-blue">Výroba ozubených kol</a></td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>
+                            <a href="detail-otazka-19.html" class="text-light-blue">Zkoušky mechanických vlastností materiálů</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o zkouškách mechanických vlastností materiálů." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>
+                            <a href="detail-otazka-20.html" class="text-light-blue">Zkoušky technologických vlastností materiálů</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o zkouškách technologických vlastností materiálů." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td><a href="detail-otazka-21.html" class="text-light-blue">Soustružení</a></td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td><a href="detail-otazka-22.html" class="text-light-blue">Frézování</a></td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td><a href="detail-otazka-23.html" class="text-light-blue">Broušení</a></td>
+                        <td class="status-hotovo font-weight-bold text-success">HOTOVO</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>
+                            <a href="detail-otazka-24.html" class="text-light-blue">Speciální dokončovací metody</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o speciálních dokončovacích metodách." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>
+                            <a href="detail-otazka-25.html" class="text-light-blue">Hoblování, obrážení, protahování a protlačování</a>
+                            <span class="dotdot" data-toggle="popover" data-trigger="hover" title="Celá otázka" data-content="Otázka o hoblování, obrážení, protahování a protlačování." style="cursor:pointer;">...</span>
+                        </td>
+                        <td class="status-zopakovat font-weight-bold text-warning">ZOPAKOVAT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-<!-- Content Section End -->
+<!-- Otázky Strojírenská Technologie End -->
 
 <!-- Footer Start -->
 <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="container text-center py-5">
         <div class="d-flex justify-content-center mb-4">
-            <a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-light btn-social" href="https://www.instagram.com/lordskelen18/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
         <div class="d-flex justify-content-center mb-3">
             <a class="text-white" href="#">Privacy</a>
@@ -81,8 +285,7 @@
             <span class="px-3">|</span>
             <a class="text-white" href="#">Help</a>
         </div>
-        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">SkelenWeb</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" SKELEN>SKELEN</a>
-        </p>
+        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">SkelenWeb</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">SKELEN</a></p>
     </div>
 </div>
 <!-- Footer End -->
@@ -103,12 +306,28 @@
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 
+<!-- Bootstrap JS (pro funkčnost dropdownu) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 <!-- Contact Javascript File -->
 <script src="mail/jqBootstrapValidation.min.js"></script>
 <script src="mail/contact.js"></script>
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+    <!-- Bootstrap JS (pro funkčnost popoveru) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                trigger: 'hover'
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -10000,16 +10000,19 @@ h6,
   overflow: hidden; /* Skrytí přetékajícího obsahu */
 }
 
-.status-hotovo {
-  color: #28a745; /* Zelená pro HOTOVO */
-}
-
 .status-zopakuj {
-  color: #dc3545; /* Červená pro ZOPAKOVAT */
+  color: #FFA500; /* Oranžová pro stav "ZOPAKOVAT" */
+  font-weight: bold;
 }
 
 .status-precti {
-  color: #ffc107; /* Žlutá pro PŘEČÍST */
+  color: #FF0000; /* Červená pro stav "PŘEČÍST" */
+  font-weight: bold;
+}
+
+.status-hotovo {
+  color: #008000; /* Zelená pro stav "HOTOVO" */
+  font-weight: bold;
 }
 
 .bg-light-blue {
