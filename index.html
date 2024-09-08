@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>SKELEN - My Website</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="Příprava na Maturitu" name="keywords">
+    <meta content="Web pro přípravu na Maturitní zkoušku" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -18,17 +18,13 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
 <!-- Navbar Start -->
-<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
     <a href="index.html" class="navbar-brand ml-lg-3">
         <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
     </a>
@@ -37,9 +33,17 @@
     </button>
     <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
         <div class="navbar-nav m-auto py-0">
-            <a href="#home" class="nav-item nav-link active">Home</a>
-            <a href="#progres" class="nav-item nav-link">Progres</a>
-            <a href="#subjects" class="nav-item nav-link">Předměty</a>
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="index.html#progres" class="nav-item nav-link">Progres</a>
+            <!-- Předměty Dropdown -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
+                <div class="dropdown-menu" aria-labelledby="subjectDropdown">
+                    <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
+                    <a class="dropdown-item" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
+                    <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -201,8 +205,8 @@
                     <img src="img/stt.jpg" class="service-icon rounded-circle" alt="Strojírenská Technologie" style="width: 60px; height: 60px; object-fit: cover;">
                     <h4 class="font-weight-bold m-0 ml-3">Strojírenská Technologie</h4>
                 </div>
-                <p>Základy technologie,25 otázek se naučit.</p>
-                <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
+                <p>Základy technologie, 25 otázek se naučit.</p>
+                <a class="border-bottom border-primary text-decoration-none" href="strojirenska-technologie.html">Read More</a>
             </div>
 
             <!-- Předmět 2 -->
@@ -212,7 +216,7 @@
                     <h4 class="font-weight-bold m-0 ml-3">Stavba a Provoz Strojů</h4>
                 </div>
                 <p>Mechanismy apod., naučit se 21 otázek.</p>
-                <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
+                <a class="border-bottom border-primary text-decoration-none" href="stavba-a-provoz-stroju.html">Read More</a>
             </div>
 
             <!-- Předmět 3 -->
@@ -222,7 +226,7 @@
                     <h4 class="font-weight-bold m-0 ml-3">Česká Literatura</h4>
                 </div>
                 <p>Literatura, naučit se 20 zvolených děl.</p>
-                <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
+                <a class="border-bottom border-primary text-decoration-none" href="cesky-jazyk.html">Read More</a>
             </div>
         </div>
     </div>
