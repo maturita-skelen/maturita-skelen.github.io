@@ -265,7 +265,9 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+    -webkit-appearance: button;
+    -moz-appearance: button; /* Přidáno pro Firefox */
+    appearance: button; /* Standardní vlastnost */
 }
 
 button:not(:disabled),
@@ -331,6 +333,8 @@ progress {
 [type="search"] {
   outline-offset: -2px;
   -webkit-appearance: none;
+  -moz-appearance: none; /* Přidáno pro Firefox */
+  appearance: none; /* Standardní vlastnost */
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -3561,7 +3565,7 @@ input[type="button"].btn-block {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  color-adjust: exact;
+  /* color-adjust: exact; */ /* Odstraněno */
 }
 
 .custom-control-inline {
@@ -9981,4 +9985,41 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.text-light-blue {
+  color: #2f7bff; /* Světle modrá barva */
+}
+
+.bg-light {
+  background-color: #f8f9fa; /* Světle šedá barva pozadí */
+}
+
+.table {
+  border-radius: 0.5rem; /* Zaoblení hran */
+  overflow: hidden; /* Skrytí přetékajícího obsahu */
+}
+
+.status-hotovo {
+  color: #28a745; /* Zelená pro HOTOVO */
+}
+
+.status-zopakuj {
+  color: #dc3545; /* Červená pro ZOPAKOVAT */
+}
+
+.status-precti {
+  color: #ffc107; /* Žlutá pro PŘEČÍST */
+}
+
+.bg-light-blue {
+  background-color: #e7f1ff; /* Světle modrá barva pro 18. století */
+}
+
+.bg-light-green {
+  background-color: #d4edda; /* Světle zelená barva pro 19. století */
+}
+
+.bg-light-orange {
+  background-color: #fff3cd; /* Světle oranžová barva pro 20. a 21. století */
 }
