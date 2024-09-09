@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Přihlášení - SkelenWeb</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Přihlášení, SkelenWeb" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap & Custom Styles -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Custom style for pushing footer down */
+        body, html {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+        .container.mt-5.pt-5 {
+            margin-top: 120px; /* Zvýšíme prostor nad formulářem */
+        }
+        .container-fluid.bg-primary {
+            margin-top: auto; /* Přilepí footer k dolní části stránky */
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navbar Start -->
+<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
+    <a href="index.html" class="navbar-brand ml-lg-3">
+        <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+        <div class="navbar-nav m-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="index.html#progres" class="nav-item nav-link">Progres</a>
+            <!-- Předměty Dropdown -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
+                <div class="dropdown-menu" aria-labelledby="subjectDropdown">
+                    <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
+                    <a class="dropdown-item" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
+                    <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
+                </div>
+            </div>
+        </div>
+        <!-- Účet Section -->
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Účet</a>
+            <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                <!-- Pokud uživatel není přihlášen -->
+                <a class="dropdown-item" href="login.html" id="loginLink">Přihlášení</a>
+                <a class="dropdown-item" href="register.html" id="registerLink">Registrace</a>
+                <!-- Pokud uživatel je přihlášen, zobrazuje pouze Nastavení účtu -->
+                <a class="dropdown-item d-none" id="accountSettings" href="account-settings.html">Nastavení účtu</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Login Form -->
+<div class="container mt-5 pt-5 content">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Přihlášení</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" placeholder="Váš email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Heslo:</label>
+                    <input type="password" id="password" class="form-control" placeholder="Vaše heslo" required>
+                </div>
+                <div id="errorMessage" class="text-danger text-center"></div> <!-- Error message display -->
+                <button type="submit" class="btn btn-primary btn-block">Přihlásit se</button>
+            </form>
+            <p class="text-center mt-3">Nemáte ještě účet? <a href="register.html">Registrovat se</a>.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container text-center py-5">
+        <div class="d-flex justify-content-center mb-4">
+            <a class="btn btn-light btn-social" href="https://www.instagram.com/lordskelen18/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+            <a class="text-white" href="#">Privacy</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="#">Terms</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="#">FAQs</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="#">Help</a>
+        </div>
+        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">SkelenWeb</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">SKELEN</a></p>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Firebase Setup using ESM -->
+<script type="module">
+    // Import Firebase services
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkTg1GymgKgqBK4JOf4wsmZGXyEuwbYlM",
+        authDomain: "maturita-skelen.firebaseapp.com",
+        databaseURL: "https://maturita-skelen-default-rtdb.firebaseio.com",
+        projectId: "maturita-skelen",
+        storageBucket: "maturita-skelen.appspot.com",
+        messagingSenderId: "435879040489",
+        appId: "1:435879040489:web:4dd7d3e26663390da16778",
+        measurementId: "G-TQV0KVVDJJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Check user login state
+    onAuthStateChanged(auth, user => {
+        if (user) {
+            // User is signed in
+            document.getElementById("loginLink").classList.add("d-none");
+            document.getElementById("registerLink").classList.add("d-none");
+            document.getElementById("accountSettings").classList.remove("d-none");
+        } else {
+            // No user is signed in
+            document.getElementById("loginLink").classList.remove("d-none");
+            document.getElementById("registerLink").classList.remove("d-none");
+            document.getElementById("accountSettings").classList.add("d-none");
+        }
+    });
+
+    // Login form submission
+    document.getElementById("loginForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            window.location.href = "index.html"; // Redirect to homepage on success
+        } catch (error) {
+            errorMessage.textContent = error.message; // Display error message
+        }
+    };
+
+    // Logout function
+    document.getElementById("logoutLink").onclick = () => {
+        signOut(auth).then(() => {
+            window.location.href = "login.html"; // Redirect to login page after logout
+        });
+    };
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

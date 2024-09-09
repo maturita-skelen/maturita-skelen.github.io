@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SKELEN - Nastavení účtu</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Příprava na Maturitu" name="keywords">
+    <meta content="Web pro přípravu na Maturitní zkoušku" name="description">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
+        <a href="index.html" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="index.html#progres" class="nav-item nav-link">Progres</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
+                    <div class="dropdown-menu" aria-labelledby="subjectDropdown">
+                        <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
+                        <a class="dropdown-item" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
+                        <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Účet Section -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Účet</a>
+                <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                    <div id="accountLinks">
+                        <a class="dropdown-item" id="loginLink" href="login.html">Přihlášení</a>
+                        <a class="dropdown-item" id="registerLink" href="register.html">Registrace</a>
+                    </div>
+                    <a class="dropdown-item" id="logoutLink" href="#">Odhlásit se</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <h3 class="text-white font-weight-normal mb-3">Nastavení mého účtu</h3>
+                    <h1 class="display-3 text-uppercase text-primary mb-2">Účet</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Account Settings Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <h2 class="font-weight-bold mb-4">Osobní údaje</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Uživatelské jméno</label>
+                    <input type="text" class="form-control" id="username" placeholder="Zadejte uživatelské jméno">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Zadejte email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Heslo</label>
+                    <input type="password" class="form-control" id="password" placeholder="Zadejte nové heslo">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Potvrzení hesla</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Potvrďte heslo">
+                </div>
+                <button type="submit" class="btn btn-primary">Uložit změny</button>
+            </form>
+
+            <h2 class="font-weight-bold mt-5 mb-4">Pokrok</h2>
+            <p>Upravte svůj pokrok v jednotlivých předmětech.</p>
+            <!-- Zde můžeš přidat pokrokové barvy pro předměty -->
+            <div class="row mt-4">
+                <div class="col-12 mb-2">
+                    <h5 class="font-weight-bold">ČJ Knihy</h5>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 67.5%;" aria-valuenow="67.5" aria-valuemin="0" aria-valuemax="100">67.5%</div>
+                    </div>
+                </div>
+                <!-- Další předměty... -->
+            </div>
+        </div>
+    </div>
+    <!-- Account Settings End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="container text-center py-5">
+            <div class="d-flex justify-content-center mb-4">
+                <a class="btn btn-light btn-social" href="https://www.instagram.com/lordskelen18/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+                <a class="text-white" href="#">Privacy</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Terms</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">FAQs</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Help</a>
+            </div>
+            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">SkelenWeb</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">SKELEN</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Firebase Setup using ESM -->
+    <script type="module">
+        // Import Firebase services
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAkTg1GymgKgqBK4JOf4wsmZGXyEuwbYlM",
+            authDomain: "maturita-skelen.firebaseapp.com",
+            databaseURL: "https://maturita-skelen-default-rtdb.firebaseio.com",
+            projectId: "maturita-skelen",
+            storageBucket: "maturita-skelen.appspot.com",
+            messagingSenderId: "435879040489",
+            appId: "1:435879040489:web:4dd7d3e26663390da16778",
+            measurementId: "G-TQV0KVVDJJ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Check user authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, display account settings
+                document.getElementById("username").value = user.displayName || "";
+                document.getElementById("email").value = user.email || "";
+                document.getElementById("loginLink").style.display = "none";
+                document.getElementById("registerLink").style.display = "none";
+                document.getElementById("logoutLink").style.display = "block";
+
+                // Logout button functionality
+                document.getElementById("logoutLink").onclick = function () {
+                    signOut(auth).then(() => {
+                        window.location.href = "index.html"; // Redirect after logout
+                    }).catch((error) => {
+                        console.error('Error during logout:', error);
+                    });
+                };
+            } else {
+                // No user is signed in, show login and registration links
+                document.getElementById("loginLink").style.display = "block";
+                document.getElementById("registerLink").style.display = "block";
+                document.getElementById("logoutLink").style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

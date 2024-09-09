@@ -8,8 +8,7 @@
     <meta content="Příprava na Maturitu" name="keywords">
     <meta content="Web pro přípravu na Maturitní zkoušku" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -45,10 +44,20 @@
                 </div>
             </div>
         </div>
+        <!-- Účet Section -->
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Účet</a>
+            <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                <!-- Dynamically show/hide login/registration -->
+                <a class="dropdown-item" id="loginLink" href="login.html">Přihlášení</a>
+                <a class="dropdown-item" id="registerLink" href="register.html">Registrace</a>
+                <a class="dropdown-item d-none" id="accountSettings" href="account-settings.html">Nastavení účtu</a>
+                <a class="dropdown-item d-none" id="logoutLink" href="#">Odhlásit</a>
+            </div>
+        </div>
     </div>
 </nav>
 <!-- Navbar End -->
-
 
 <!-- Header Start -->
 <div class="container-fluid bg-dark d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
@@ -223,7 +232,7 @@
             <div class="col-lg-4 col-md-6 text-center mb-5">
                 <div class="d-flex align-items-center justify-content-center mb-4">
                     <img src="img/cj.jpg" class="service-icon rounded-circle" alt="Česká Literatura" style="width: 60px; height: 60px; object-fit: cover;">
-                    <h4 class="font-weight-bold m-0 ml-3">Česká Literatura</h4>
+                    <h4 class="font-weight-bold m-0 ml-3">ČeskÝ Jazyk</h4>
                 </div>
                 <p>Literatura, naučit se 20 zvolených děl.</p>
                 <a class="border-bottom border-primary text-decoration-none" href="cesky-jazyk.html">Read More</a>
@@ -232,8 +241,6 @@
     </div>
 </div>
 <!-- Subjects End -->
-
-
 
 <!-- Footer Start -->
 <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
@@ -263,6 +270,55 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+<!-- Firebase Setup using ESM -->
+<script type="module">
+    // Import Firebase services
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+    import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkTg1GymgKgqBK4JOf4wsmZGXyEuwbYlM",
+        authDomain: "maturita-skelen.firebaseapp.com",
+        databaseURL: "https://maturita-skelen-default-rtdb.firebaseio.com",
+        projectId: "maturita-skelen",
+        storageBucket: "maturita-skelen.appspot.com",
+        messagingSenderId: "435879040489",
+        appId: "1:435879040489:web:4dd7d3e26663390da16778",
+        measurementId: "G-TQV0KVVDJJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Check user login state
+    onAuthStateChanged(auth, user => {
+        if (user) {
+            // User is signed in
+            document.getElementById("loginLink").classList.add("d-none");
+            document.getElementById("registerLink").classList.add("d-none");
+            document.getElementById("accountSettings").classList.remove("d-none");
+            document.getElementById("logoutLink").classList.remove("d-none");
+        } else {
+            // No user is signed in
+            document.getElementById("loginLink").classList.remove("d-none");
+            document.getElementById("registerLink").classList.remove("d-none");
+            document.getElementById("accountSettings").classList.add("d-none");
+            document.getElementById("logoutLink").classList.add("d-none");
+        }
+    });
+
+    // Logout function
+    document.getElementById("logoutLink").onclick = () => {
+        signOut(auth).then(() => {
+            alert("Odhlášení bylo úspěšné!");
+            location.reload(); // Reload page after logout
+        }).catch((error) => {
+            alert("Nastala chyba při odhlašování: " + error.message);
+        });
+    };
+</script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -274,9 +330,7 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="utf-8">
@@ -8,8 +8,6 @@
     <meta content="Stavba a provoz strojů, maturita" name="keywords">
     <meta content="Web pro přípravu na Maturitní zkoušku - Stavba a provoz strojů" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,34 +18,95 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyAkTg1GymgKgqBK4JOf4wsmZGXyEuwbYlM",
+            authDomain: "maturita-skelen.firebaseapp.com",
+            databaseURL: "https://maturita-skelen-default-rtdb.firebaseio.com",
+            projectId: "maturita-skelen",
+            storageBucket: "maturita-skelen.appspot.com",
+            messagingSenderId: "435879040489",
+            appId: "1:435879040489:web:4dd7d3e26663390da16778",
+            measurementId: "G-TQV0KVVDJJ"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Check user authentication state
+        auth.onAuthStateChanged((user) => {
+            console.log(user);
+            const loginLink = document.getElementById("loginLink");
+            const registerLink = document.getElementById("registerLink");
+            const accountSettings = document.getElementById("accountSettings");
+            const logoutLink = document.getElementById("logoutLink");
+    
+            if (user) {
+                // User is signed in
+                loginLink.classList.add("d-none");
+                registerLink.classList.add("d-none");
+                accountSettings.classList.remove("d-none");
+                logoutLink.classList.remove("d-none");
+            } else {
+                // No user is signed in
+                loginLink.classList.remove("d-none");
+                registerLink.classList.remove("d-none");
+                accountSettings.classList.add("d-none");
+                logoutLink.classList.add("d-none");
+            }
+        });
+    
+        // Logout function
+        function logout() {
+            auth.signOut().then(() => {
+                console.log("User signed out.");
+                // Optional: Redirect to the home page after logout
+                window.location.href = "index.html";
+            });
+        }
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
-<!-- Navbar Start -->
-<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
-    <a href="index.html" class="navbar-brand ml-lg-3">
-        <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
-    </a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-        <div class="navbar-nav m-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="index.html#progres" class="nav-item nav-link">Progres</a>
-            <!-- Předměty Dropdown -->
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="z-index: 1000;">
+        <a href="index.html" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5"><span class="text-primary">Skelen</span>Web</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="index.html#progres" class="nav-item nav-link">Progres</a>
+                <!-- Předměty Dropdown -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
+                    <div class="dropdown-menu" aria-labelledby="subjectDropdown">
+                        <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
+                        <a class="dropdown-item active" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
+                        <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Účet Section -->
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="subjectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Předměty</a>
-                <div class="dropdown-menu" aria-labelledby="subjectDropdown">
-                    <a class="dropdown-item" href="strojirenska-technologie.html">Strojírenská Technologie</a>
-                    <a class="dropdown-item active" href="stavba-a-provoz-stroju.html">Stavba a Provoz Strojů</a>
-                    <a class="dropdown-item" href="cesky-jazyk.html">Český Jazyk</a>
+                <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Účet</a>
+                <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                    <a class="dropdown-item" id="loginLink" href="login.html">Přihlášení</a>
+                    <a class="dropdown-item" id="registerLink" href="register.html">Registrace</a>
+                    <a class="dropdown-item d-none" id="accountSettings" href="account-settings.html">Nastavení účtu</a>
+                    <a class="dropdown-item d-none" id="logoutLink" href="#" onclick="logout()">Odhlásit</a>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
-<!-- Navbar End -->
+    </nav>
+    <!-- Navbar End -->
 
 <!-- Header Start -->
 <div class="container-fluid bg-white d-flex align-items-center mb-5 py-5" style="min-height: 50vh;">
@@ -291,12 +350,14 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    
 
     <!-- Popover Initialization -->
     <script>
